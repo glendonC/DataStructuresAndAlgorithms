@@ -5,19 +5,16 @@ class Solution(object):
         :type target: int
         :rtype: int
         """
-        
-        #Iterate over array
-        for i in range(len(nums)):
+        low=0
+        high=len(nums)-1
+        while low<=high:
+            mid=(low+high)//2
             
-            #If target is found, return its' index
-            if nums[i]==target:
-                return i
-            
-            #If target is smaller than the last value in array, the target would take the previous last index
-            elif nums[i]>target:
-                return i
-        
-        #Return length of array if the target is the greatest value
-        return len(nums)
-                
-        #Runtime: 40ms
+            if nums[mid]==target:
+                return mid
+            elif nums[mid]<target:
+                low=mid+1
+            else:
+                high=mid-1
+        return high+1
+        #Runtime: 28ms
