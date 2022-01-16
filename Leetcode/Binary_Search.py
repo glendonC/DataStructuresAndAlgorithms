@@ -13,4 +13,4 @@ class Solution(object):
         #Default return value if target isn't found
         return -1
         
-        #Without comments, runtime is 192ms
+        #Runtime: 192ms
